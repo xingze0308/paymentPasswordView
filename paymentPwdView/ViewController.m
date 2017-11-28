@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MZPassWordAlertView.h"
 
 @interface ViewController ()
 
@@ -17,8 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+  
+    
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [MZPassWordAlertView showWithTitle:@"title" subTitle:@"subtitle" money:100 finish:^(NSString *pwStr) {
+        NSLog(@"finished");
+    } cancelBtnOnClick:^{
+        NSLog(@"click cancel");
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
